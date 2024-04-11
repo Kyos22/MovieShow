@@ -168,6 +168,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\SignUpServiceProvider::class,
+        App\Providers\AdminServiceProvider::class,
+        App\Providers\UploadFileServiceProvider::class,
+        App\Providers\MovieServiceProvider::class,
     ])->toArray(),
 
     /*
