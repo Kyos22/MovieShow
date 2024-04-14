@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('movies', function (Blueprint $table) {
-            $table->unsignedBigInteger('idAdmin')->default(0)->change();
+        Schema::table('carts', function (Blueprint $table) {
+            $table->decimal('total');
         });
     }
 
@@ -21,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('movies', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('carts');
     }
 };

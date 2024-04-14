@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('qualify', function (Blueprint $table) {
-            $table->id();
-            $table->string('nameQualification');
+        Schema::table('accounts', function (Blueprint $table) {
+            $table->unsignedBigInteger('idPackage')->nullable();
+            $table->foreign('idPackage')->references('id')->on('packages');
         });
+
     }
 
     /**
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('qualify');
+        Schema::dropIfExists('accounts');
     }
 };

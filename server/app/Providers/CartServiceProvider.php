@@ -2,18 +2,16 @@
 
 namespace App\Providers;
 
-use App\Services\SignUpService;
+use App\Services\CartService;
 use Illuminate\Support\ServiceProvider;
 
-class SignUpServiceProvider extends ServiceProvider
+class CartServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
+    
     public function register(): void
     {
-        $this->app->bind(SignUpService::class,function($app){
-            return new SignUpService();
+        $this->app->bind(CartService::class,function($app){
+            return new CartService();
         });
     }
 

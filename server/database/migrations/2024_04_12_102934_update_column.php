@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('movies', function (Blueprint $table) {
-            
-            $table->renameColumn('qualifiction','qualification');
+            $table->unsignedBigInteger('qualification');
+            $table->foreign('qualification')->references('id')->on('qualify');
+            $table->unsignedBigInteger('genre');
+            $table->foreign('genre')->references('id')->on('genre');
         });
     }
 

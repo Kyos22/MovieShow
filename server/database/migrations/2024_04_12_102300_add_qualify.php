@@ -9,15 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::table('accounts', function (Blueprint $table) {
-           
-            $table->string('subscription')->nullable()->change();
-            $table->boolean('status')->nullable();
-            $table->datetime('created');
-
+        Schema::create('qualify', function (Blueprint $table) {
+            $table->id();
+            $table->string('nameQualification');
         });
+
     }
 
     /**
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('account');
+        Schema::dropIfExists('qualify');
     }
 };
