@@ -14,6 +14,7 @@ class AuthenticationService{
         $userData['password'] = Hash::make($userData['password']);
         $userData['status'] = true;
         $userData['role'];
+        $userData['idCountry'];
         $userData['created'] = Carbon::now();
 
         $user = Account::create($userData);

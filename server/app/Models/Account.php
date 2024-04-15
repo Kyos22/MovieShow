@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     protected $table = 'accounts';
-    protected $fillable = ['id','username','password','fullname','email','firstName','lastName','subscription','role','status','created'];
+    protected $fillable = ['id','username','password','fullname','email','firstName','lastName','subscription','role','status','created','idCountry'];
     public $timestamps=false;
 }

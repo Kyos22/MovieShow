@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Payment extends Model
+class Country extends Model
 {
-    protected $table = 'payments';
-    protected $fillable = ['namePaymentMethod'];
+    protected $table = 'countries';
+    protected $fillable = ['nameCountry'];
     public $timestamps = false;
 }

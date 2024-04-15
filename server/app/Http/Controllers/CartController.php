@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Services\CartService;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,10 @@ class CartController extends Controller
     //function to add package into cart customer and total 
     public function addCart(Request $request,$idCustomer,$idPackage){
         try {
+            $checkExist = Cart::where('idCustomer',$idCustomer)->count();
+            if($checkExist >= 1){
+                return response()->json(['error'=>'cart already exist 1 product'],500);
+            }
             $validate = $request->validate([
                 'quantity' => 'numeric',            
             ]);

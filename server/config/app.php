@@ -174,6 +174,8 @@ return [
         App\Providers\MovieServiceProvider::class,
         App\Providers\PackageServiceProvider::class,
         App\Providers\CartServiceProvider::class,
+        App\Providers\PaymentServiceProvider::class,
+        App\Providers\CountryServiceProvider::class,
     ])->toArray(),
 
     /*

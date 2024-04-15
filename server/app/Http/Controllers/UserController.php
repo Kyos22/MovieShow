@@ -47,10 +47,12 @@ class UserController extends Controller
             $validateData = $request->validate([
                 'username' => 'required|max:255',
                 'email' => 'required|email|max:255',
-                'password' => 'required|min:6'
+                'password' => 'required|min:6',
+                'idCountry' => 'numeric'
                 
             ]);
             $validateData['role'] = 1;
+            
             $token='';  
             $checkExist = $this->authenticationService->checkExistEmailUsername($request->input('username'),$request->input('email'));     
             if($checkExist==null){
